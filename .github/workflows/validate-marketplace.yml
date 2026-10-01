@@ -18,6 +18,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Test modular skill structure and contracts
+        run: node --test tests/skills.test.cjs
       - name: Validate marketplace with Claude Code
         run: npx --yes --package=@anthropic-ai/claude-code@2.1.233 claude plugin validate .
       - name: Validate secur-csc-fsi plugin

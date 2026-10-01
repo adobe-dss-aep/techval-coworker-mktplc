@@ -9,11 +9,14 @@ Repository: https://github.com/adobe-dss-aep/techval-coworker-mktplc
 
 | Plugin | Skill | Purpose |
 | --- | --- | --- |
-| [secur-csc-fsi](plugins/secur-csc-fsi/README.md) | `secur-csc-fsi` | Public-safe, configurable Secur Financial/Get Moving Content Supply Chain demo workflow |
+| [secur-csc-fsi](plugins/secur-csc-fsi/README.md) | `secur-csc-fsi` + six step skills | Modular Secur Financial/Get Moving Content Supply Chain demo workflow |
 
 The first plugin uses Secur Financial branding while preserving the supplied
 demo workflow, imagery, and appointment metrics. Authorized connectors and
 private environment configuration are required before running it.
+The master runs all six steps by default. Use standalone steps or request a
+subset; excluded steps must have verified replacement inputs where needed.
+See the [skill catalog and examples](plugins/secur-csc-fsi/README.md).
 
 This is a community-maintained marketplace, not an official Anthropic
 marketplace. Publication does not imply endorsement by Adobe or Anthropic.
@@ -54,6 +57,7 @@ Maintainers with the Claude Code CLI can validate the shared plugin format
 from the repository root:
 
 ```sh
+node --test tests/skills.test.cjs
 claude plugin validate ./plugins/secur-csc-fsi
 claude plugin validate .
 ```

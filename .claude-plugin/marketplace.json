@@ -8,7 +8,7 @@
     {
       "name": "secur-csc-fsi",
       "source": "./plugins/secur-csc-fsi",
-      "description": "A configurable Secur Financial/Get Moving Content Supply Chain demo workflow for Claude Desktop/Cowork."
+      "description": "A modular Secur Financial/Get Moving Content Supply Chain demo with a master coordinator and six standalone step skills for Claude Desktop/Cowork."
     }
   ]
 }

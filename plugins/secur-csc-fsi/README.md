@@ -1,7 +1,8 @@
 # secur-csc-fsi
 
 A Claude Desktop/Cowork plugin containing the
-[`secur-csc-fsi` skill](skills/secur-csc-fsi/SKILL.md).
+[`secur-csc-fsi` master skill](skills/secur-csc-fsi/SKILL.md) and six standalone
+step skills.
 
 ## Scope
 
@@ -10,14 +11,39 @@ Content Supply Chain demo workflow. The skill is named `secur-csc-fsi`.
 This branding update preserves the existing imagery and appointment metrics;
 it is not a full rewrite of the workflow for financial services.
 
-The skill coordinates six steps:
+The master runs all six steps by default, preserving their existing approval
+gates. Each step can also be used on its own with verified inputs:
 
-1. CJA opening baseline and creative generation.
-2. Workfront project creation through Fusion.
-3. Content review and user confirmation.
-4. Image cropping and AEM asset creation.
-5. AEM content fragment and page update.
-6. An explicitly labeled simulated 90-day follow-up.
+| Step | Skill | Purpose |
+| --- | --- | --- |
+| 1 | [secur-csc-fsi-baseline](skills/secur-csc-fsi-baseline/SKILL.md) | CJA opening baseline and creative generation |
+| 2 | [secur-csc-fsi-project](skills/secur-csc-fsi-project/SKILL.md) | Workfront project creation through Fusion |
+| 3 | [secur-csc-fsi-review](skills/secur-csc-fsi-review/SKILL.md) | Content review and creative-execution decision |
+| 4 | [secur-csc-fsi-assets](skills/secur-csc-fsi-assets/SKILL.md) | Image cropping and AEM asset creation |
+| 5 | [secur-csc-fsi-page](skills/secur-csc-fsi-page/SKILL.md) | Governed content fragment and DA page publication |
+| 6 | [secur-csc-fsi-follow-up](skills/secur-csc-fsi-follow-up/SKILL.md) | Explicitly labeled simulated 90-day follow-up |
+
+### Include, exclude, and resume
+
+Tell the master which steps to include or exclude. Selected steps remain in
+numerical order. An excluded step is not run silently: if its outputs are
+needed later, supply existing artifacts that can be verified. Missing inputs
+block dependent execution instead of being guessed. Exclusions never waive
+governance or approval requirements.
+
+Examples:
+
+- "Use secur-csc-fsi to run all six steps."
+- "Run steps 2 through 5 with this approved image and campaign brief; exclude
+  the baseline and simulated follow-up."
+- "Use secur-csc-fsi-page with these verified assets and campaign fields."
+- "Resume after review without recreating the Workfront project."
+
+Standalone skills return their own results and stop; they never automatically
+call the next skill. A partial result, failure, timeout, or declined approval
+pauses the master. Completed, reused, excluded, and pending work are reported
+separately. Step 1 still includes both the baseline and initial creative;
+declining generation requires a verified existing image for downstream work.
 
 ## Install and use in Claude Desktop
 
@@ -38,8 +64,11 @@ templates: they must be resolved against actual available tools before use.
 The separately referenced content-fragment skill and brand policy are not
 bundled.
 
-Configure the required values described in
-[`SKILL.md`](skills/secur-csc-fsi/SKILL.md) privately. All source tenant URLs,
+Configure the required values described in the
+[shared rules](skills/secur-csc-fsi/references/common.md) and
+[step contracts](skills/secur-csc-fsi/references/run-contract.md) privately.
+Only selected steps and verification of their inputs require configuration.
+All source tenant URLs,
 webhook URLs, and environment-specific IDs have been replaced with placeholders
 or named configuration references. No credentials or connector configurations
 are distributed by this plugin.
@@ -58,6 +87,24 @@ approval before creating or publishing content.
 - Made failures, partial output, timeouts, and simulated results explicit.
 - Avoided automatic retries of timed-out mutations to prevent duplicate work.
 - Corrected the review-result reference to use the returned `CurrentVersionID`.
+- Extracted each step without duplicating procedures in the master.
+- Shared configuration, approval rules, dependency contracts, and run state
+  apply equally to master-coordinated and standalone execution.
+
+## Maintainer validation
+
+From the repository root:
+
+```sh
+node --test tests/skills.test.cjs
+claude plugin validate ./plugins/secur-csc-fsi
+claude plugin validate .
+```
+
+The tests verify package structure, skill metadata, shared references,
+orchestration boundaries, critical contracts, and preserved creative prompts.
+They do not exercise Adobe connectors or prove that an instruction-following
+model will complete a live run.
 
 The original source remains unchanged outside this repository. This package
 has been structurally validated; execution against Adobe tenants and
