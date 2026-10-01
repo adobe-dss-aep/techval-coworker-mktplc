@@ -54,8 +54,8 @@ test('catalog source, plugin identity, and modular release metadata agree', () =
   const entry = catalog.plugins.find(plugin => plugin.name === masterName);
   assert.ok(entry);
   assert.equal(manifest.name, masterName);
-  assert.equal(manifest.version, '0.2.1');
-  assert.equal(manifest.displayName, 'Secur Financial Content Supply Chain');
+  assert.equal(manifest.version, '0.2.2');
+  assert.equal(manifest.displayName, '🖼️ Secur Financial Content Supply Chain');
   assert.equal(entry.displayName, manifest.displayName);
   assert.equal(entry.description, manifest.description);
   assert.equal(path.resolve(root, entry.source), pluginRoot);

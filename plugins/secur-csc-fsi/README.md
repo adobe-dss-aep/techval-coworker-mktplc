@@ -4,8 +4,10 @@ A Claude Desktop/Cowork plugin containing the
 [`secur-csc-fsi` master skill](skills/secur-csc-fsi/SKILL.md) and six standalone
 step skills.
 
-The plugin's display name is **Secur Financial Content Supply Chain**.
+The plugin's display name is **🖼️ Secur Financial Content Supply Chain**.
 Its permanent identifier and master skill name remain `secur-csc-fsi`.
+The picture emoji is part of the display-name text; it does not set or replace
+Claude's separate plugin icon.
 
 ## Scope
 
@@ -53,7 +55,7 @@ declining generation requires a verified existing image for downstream work.
 1. Open **Customize > Plugins**.
 2. Choose **Add marketplace** (under **Add** in some app versions).
 3. Enter `https://github.com/adobe-dss-aep/techval-coworker-mktplc`.
-4. Select and install **Secur Financial Content Supply Chain** (`secur-csc-fsi`).
+4. Select and install **🖼️ Secur Financial Content Supply Chain** (`secur-csc-fsi`).
 5. In Cowork, ask: "Use secur-csc-fsi to build the Secur Financial Get Moving demo."
 
 The skill is a configurable demo template, not a ready-to-run tenant setup.
