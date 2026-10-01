@@ -24,3 +24,7 @@ jobs:
         run: npx --yes --package=@anthropic-ai/claude-code@2.1.233 claude plugin validate .
       - name: Validate secur-csc-fsi plugin
         run: npx --yes --package=@anthropic-ai/claude-code@2.1.233 claude plugin validate ./plugins/secur-csc-fsi
+      - name: Validate Secur Financial CX placeholder
+        run: npx --yes --package=@anthropic-ai/claude-code@2.1.233 claude plugin validate ./plugins/secur-financial-cx
+      - name: Validate Hands On Labs - AJO placeholder
+        run: npx --yes --package=@anthropic-ai/claude-code@2.1.233 claude plugin validate ./plugins/hands-on-labs-ajo

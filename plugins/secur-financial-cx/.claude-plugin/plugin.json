@@ -1,0 +1,9 @@
+{
+  "name": "secur-financial-cx",
+  "displayName": "Secur Financial CX",
+  "version": "0.1.0",
+  "description": "A no-op placeholder plugin for testing the Secur Financial CX card and skill in Claude Desktop/Cowork.",
+  "author": {
+    "name": "adobe-dss-aep"
+  }
+}

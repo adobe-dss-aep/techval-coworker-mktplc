@@ -9,7 +9,9 @@ Repository: https://github.com/adobe-dss-aep/techval-coworker-mktplc
 
 | Plugin | Skill | Purpose |
 | --- | --- | --- |
-| [secur-csc-fsi](plugins/secur-csc-fsi/README.md) | `secur-csc-fsi` + six step skills | Modular Secur Financial/Get Moving Content Supply Chain demo workflow |
+| [Secur Financial CSC](plugins/secur-csc-fsi/README.md) | `secur-csc-fsi` + six step skills | Modular CSC demo workflow; category `design` |
+| [Secur Financial CX](plugins/secur-financial-cx/README.md) | `secur-financial-cx` | No-op placeholder; no CX workflow implemented |
+| [Hands On Labs - AJO](plugins/hands-on-labs-ajo/README.md) | `hands-on-labs-ajo` | No-op placeholder; no AJO lab implemented |
 
 The first plugin uses Secur Financial branding while preserving the supplied
 demo workflow, imagery, and appointment metrics. Authorized connectors and
@@ -17,6 +19,8 @@ private environment configuration are required before running it.
 The master runs all six steps by default. Use standalone steps or request a
 subset; excluded steps must have verified replacement inputs where needed.
 See the [skill catalog and examples](plugins/secur-csc-fsi/README.md).
+The two dummy plugins each contain one skill that only acknowledges the
+placeholder and stops. They require no connectors or configuration.
 
 This is a community-maintained marketplace, not an official Anthropic
 marketplace. Publication does not imply endorsement by Adobe or Anthropic.
@@ -28,7 +32,8 @@ In the Claude Desktop app:
 1. Open **Customize > Plugins**.
 2. Select **Add marketplace** (under **Add** in some app versions).
 3. Enter `https://github.com/adobe-dss-aep/techval-coworker-mktplc`.
-4. Select **🖼️ Secur Financial Content Supply Chain** (`secur-csc-fsi`) and install it.
+4. Select **Secur Financial CSC** (`secur-csc-fsi`) and install it, or select
+   either placeholder plugin to test its card and installation.
 5. In Cowork, ask: "Use secur-csc-fsi to build the Secur Financial Get Moving demo."
 
 Adding the marketplace registers its catalog; installing a plugin is a
@@ -46,6 +51,8 @@ format.
 - [`.github/workflows/validate-marketplace.yml`](.github/workflows/validate-marketplace.yml):
   automated manifest validation on pushes and pull requests.
 - [`plugins/secur-csc-fsi/`](plugins/secur-csc-fsi/): the first plugin and skill.
+- [`plugins/secur-financial-cx/`](plugins/secur-financial-cx/): CX placeholder plugin.
+- [`plugins/hands-on-labs-ajo/`](plugins/hands-on-labs-ajo/): AJO placeholder plugin.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md): how to add and validate plugins.
 
 The GitHub repository itself hosts the marketplace. A GitHub Pages website is
@@ -59,6 +66,8 @@ from the repository root:
 ```sh
 node --test tests/skills.test.cjs
 claude plugin validate ./plugins/secur-csc-fsi
+claude plugin validate ./plugins/secur-financial-cx
+claude plugin validate ./plugins/hands-on-labs-ajo
 claude plugin validate .
 ```
 

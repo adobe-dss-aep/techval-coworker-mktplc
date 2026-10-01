@@ -1,7 +1,7 @@
 {
   "name": "secur-csc-fsi",
-  "displayName": "🖼️ Secur Financial Content Supply Chain",
-  "version": "0.2.2",
+  "displayName": "Secur Financial CSC",
+  "version": "0.2.3",
   "description": "A modular Secur Financial/Get Moving Content Supply Chain demo with a master coordinator and six standalone step skills for Claude Desktop/Cowork.",
   "author": {
     "name": "adobe-dss-aep"
