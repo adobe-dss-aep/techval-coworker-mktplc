@@ -5,9 +5,10 @@ A Claude Desktop/Cowork plugin containing the
 
 ## Scope
 
-This public-safe version preserves the supplied Northwell Health / Get Moving
-Content Supply Chain demo workflow. The requested name is `secur-csc-fsi`;
-the workflow has **not** been rewritten as a financial-services demo.
+This public-safe version uses Secur Financial / Get Moving branding for the
+Content Supply Chain demo workflow. The skill is named `secur-csc-fsi`.
+This branding update preserves the existing imagery and appointment metrics;
+it is not a full rewrite of the workflow for financial services.
 
 The skill coordinates six steps:
 
@@ -24,7 +25,7 @@ The skill coordinates six steps:
 2. Choose **Add marketplace** (under **Add** in some app versions).
 3. Enter `https://github.com/adobe-dss-aep/techval-coworker-mktplc`.
 4. Select and install **secur-csc-fsi**.
-5. In Cowork, ask: "Use secur-csc-fsi to build the Northwell Get Moving demo."
+5. In Cowork, ask: "Use secur-csc-fsi to build the Secur Financial Get Moving demo."
 
 The skill is a configurable demo template, not a ready-to-run tenant setup.
 Installation does not connect or authenticate any Adobe services.
@@ -51,6 +52,7 @@ approval before creating or publishing content.
 ## Public-safe adaptations
 
 - Renamed the skill to `secur-csc-fsi` and added desktop prerequisites.
+- Applied Secur/Secur Financial branding and the `SECUR_BRAND_ID` configuration name.
 - Removed tenant endpoints, webhook URLs, and environment-specific IDs.
 - Preserved the six-step workflow and its four image-prompt variants.
 - Made failures, partial output, timeouts, and simulated results explicit.

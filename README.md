@@ -9,12 +9,11 @@ Repository: https://github.com/adobe-dss-aep/techval-coworker-mktplc
 
 | Plugin | Skill | Purpose |
 | --- | --- | --- |
-| [secur-csc-fsi](plugins/secur-csc-fsi/README.md) | `secur-csc-fsi` | Public-safe, configurable Northwell/Get Moving Content Supply Chain demo workflow |
+| [secur-csc-fsi](plugins/secur-csc-fsi/README.md) | `secur-csc-fsi` | Public-safe, configurable Secur Financial/Get Moving Content Supply Chain demo workflow |
 
-The first plugin preserves the supplied healthcare demo workflow. Its name
-does not imply that the content has been converted to a financial-services
-demo. Authorized connectors and private environment configuration are
-required before running it.
+The first plugin uses Secur Financial branding while preserving the supplied
+demo workflow, imagery, and appointment metrics. Authorized connectors and
+private environment configuration are required before running it.
 
 This is a community-maintained marketplace, not an official Anthropic
 marketplace. Publication does not imply endorsement by Adobe or Anthropic.
@@ -27,7 +26,7 @@ In the Claude Desktop app:
 2. Select **Add marketplace** (under **Add** in some app versions).
 3. Enter `https://github.com/adobe-dss-aep/techval-coworker-mktplc`.
 4. Select **secur-csc-fsi** and install it.
-5. In Cowork, ask: "Use secur-csc-fsi to build the Northwell Get Moving demo."
+5. In Cowork, ask: "Use secur-csc-fsi to build the Secur Financial Get Moving demo."
 
 Adding the marketplace registers its catalog; installing a plugin is a
 separate step. To fetch updates, select **Check for updates** on the marketplace

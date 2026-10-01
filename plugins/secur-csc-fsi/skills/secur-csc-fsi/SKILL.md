@@ -1,10 +1,10 @@
 ---
 name: secur-csc-fsi
 description: >
-  Build and configure the Northwell Health Get Moving Content Supply Chain demo
+  Build and configure the Secur Financial Get Moving Content Supply Chain demo
   in Claude Desktop/Cowork: CJA baseline, creative generation, Workfront project,
   content review, AEM assets and page publication, and a labeled simulated
-  follow-up. Use when explicitly asked for secur-csc-fsi or the Northwell/Get
+  follow-up. Use when explicitly asked for secur-csc-fsi or the Secur/Get
   Moving build, including a specific numbered step. Not a generic CSC or FSI
   provisioning workflow. Requires configured Adobe MCP connectors and private
   environment values supplied outside this public plugin.
@@ -12,9 +12,9 @@ description: >
 
 # secur-csc-fsi
 
-This public-safe skill preserves the supplied Northwell/Get Moving demo
-workflow. Its name does not change that workflow into a financial-services
-demo. The examples below are tool-request templates, not executable JSON.
+This public-safe skill uses Secur Financial/Get Moving branding while preserving
+the supplied demo workflow, imagery, and appointment metrics. The examples below
+are tool-request templates, not executable JSON.
 
 ## Desktop prerequisites and private configuration
 
@@ -53,7 +53,7 @@ links rather than failing or claiming that cards were rendered.
 DEMO_SITE_URL = PLACEHOLDER
 WF_INSTANCE_URL = PLACEHOLDER
 AEM_AUTHOR = PLACEHOLDER
-NORTHWELL_BRAND_ID = PLACEHOLDER
+SECUR_BRAND_ID = PLACEHOLDER
 CJA_PROJECT_ID = PLACEHOLDER
 CJA_DATA_VIEW_ID = PLACEHOLDER
 FUSION_BLUEPRINT_ID = PLACEHOLDER
@@ -126,7 +126,7 @@ concise, but always disclose failures, missing prerequisites, and simulated data
 
 ## ROLE AND PERSONA
 
-You are the build coordinator for the Northwell "Get Moving" demo environment. Unlike a
+You are the build coordinator for the Secur "Get Moving" demo environment. Unlike a
 campaign-execution skill, there is no live marketer waiting on creative output here — your job
 is to walk through the six build steps **in order**, confirming prerequisites, executing what
 can be automated, and surfacing open questions rather than guessing past them.
@@ -136,13 +136,13 @@ can be automated, and surfacing open questions rather than guessing past them.
 ## TRIGGER
 
 Activate when the user explicitly requests `secur-csc-fsi`, or the request is equivalent to:
-- "Let's build the Northwell demo environment"
+- "Let's build the Secur demo environment"
 - "Set up Get Moving"
-- "Start the Northwell CSC build"
-- Names a specific step directly (e.g. "let's do the CJA opening baseline for Northwell",
-  "let's build the Northwell brand definition step")
+- "Start the Secur CSC build"
+- Names a specific step directly (e.g. "let's do the CJA opening baseline for Secur",
+  "let's build the Secur Financial brand definition step")
 
-For automatic activation, "Northwell" or "Get Moving" (or an unambiguous reference
+For automatic activation, "Secur", "Secur Financial", or "Get Moving" (or an unambiguous reference
 to this specific build) must be present. Explicit requests for `secur-csc-fsi`
 also activate it. Do not infer that an unrelated FSI demo uses this workflow.
 
@@ -496,7 +496,7 @@ Do not seed synthetic values into live analytics or claim an actual uplift.
 - Never invent a CJA data view ID, dimension ID, metric ID, brand ID, or credential value —
   use the `ask_user_question` prompts above instead.
 - Never author brand rules (4a) or import brand policy (4b) from a representative/placeholder
-  document without flagging that it still needs reconciliation against Northwell's real brand
+  document without flagging that it still needs reconciliation against Secur Financial's real brand
   PDF once available.
 - Never skip the reconciliation check between 4a and 4b, including after subsequent edits.
 - Never build the optimization record on the Workfront Goals product (Build Notes Q9).
