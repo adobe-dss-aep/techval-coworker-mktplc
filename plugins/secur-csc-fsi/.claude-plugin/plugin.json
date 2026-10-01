@@ -1,0 +1,8 @@
+{
+  "name": "secur-csc-fsi",
+  "version": "0.1.0",
+  "description": "A configurable Northwell/Get Moving Content Supply Chain demo workflow for Claude Desktop/Cowork.",
+  "author": {
+    "name": "adobe-dss-aep"
+  }
+}

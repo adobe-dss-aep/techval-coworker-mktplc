@@ -1,8 +1,14 @@
 {
   "name": "techval-coworker-mktplc",
-  "description": "A public catalog for Technical Validation Claude plugins.",
+  "description": "A public catalog for Technical Validation Claude Desktop/Cowork plugins.",
   "owner": {
     "name": "adobe-dss-aep"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "secur-csc-fsi",
+      "source": "./plugins/secur-csc-fsi",
+      "description": "A configurable Northwell/Get Moving Content Supply Chain demo workflow for Claude Desktop/Cowork."
+    }
+  ]
 }
