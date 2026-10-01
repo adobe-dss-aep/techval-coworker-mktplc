@@ -1,0 +1,8 @@
+{
+  "name": "techval-coworker-mktplc",
+  "description": "A public catalog for Technical Validation Claude plugins.",
+  "owner": {
+    "name": "adobe-dss-aep"
+  },
+  "plugins": []
+}
