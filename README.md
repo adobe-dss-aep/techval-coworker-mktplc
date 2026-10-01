@@ -28,7 +28,7 @@ In the Claude Desktop app:
 1. Open **Customize > Plugins**.
 2. Select **Add marketplace** (under **Add** in some app versions).
 3. Enter `https://github.com/adobe-dss-aep/techval-coworker-mktplc`.
-4. Select **secur-csc-fsi** and install it.
+4. Select **Secur Financial Content Supply Chain** (`secur-csc-fsi`) and install it.
 5. In Cowork, ask: "Use secur-csc-fsi to build the Secur Financial Get Moving demo."
 
 Adding the marketplace registers its catalog; installing a plugin is a
