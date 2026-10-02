@@ -1,9 +1,0 @@
-{
-  "name": "hands-on-labs-ajo",
-  "displayName": "Hands On Labs - AJO",
-  "version": "0.1.0",
-  "description": "A no-op placeholder plugin for testing the Hands On Labs - AJO card and skill in Claude Desktop/Cowork.",
-  "author": {
-    "name": "adobe-dss-aep"
-  }
-}

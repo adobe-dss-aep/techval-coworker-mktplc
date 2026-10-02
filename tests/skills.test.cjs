@@ -63,12 +63,10 @@ test('catalog source, plugin identity, and modular release metadata agree', () =
   assert.match(manifest.description, /master coordinator and six standalone step skills/);
 });
 
-test('the marketplace registers all three plugins with consistent display metadata', () => {
+test('the marketplace contains only the CSC plugin with consistent display metadata', () => {
   const catalog = JSON.parse(read(path.join(root, '.claude-plugin', 'marketplace.json')));
   const expected = [
     [masterName, 'Secur Financial CSC'],
-    ['secur-financial-cx', 'Secur Financial CX'],
-    ['hands-on-labs-ajo', 'Hands On Labs - AJO'],
   ];
   assert.deepEqual(catalog.plugins.map(entry => [entry.name, entry.displayName]), expected);
   const directories = fs.readdirSync(path.join(root, 'plugins'), { withFileTypes: true })
@@ -81,36 +79,6 @@ test('the marketplace registers all three plugins with consistent display metada
     assert.equal(manifest.name, entry.name);
     assert.equal(manifest.displayName, entry.displayName);
     assert.equal(manifest.description, entry.description);
-  }
-});
-
-test('each dummy plugin contains exactly one explicit no-op skill and no executable components', () => {
-  for (const [name, displayName] of [
-    ['secur-financial-cx', 'Secur Financial CX'],
-    ['hands-on-labs-ajo', 'Hands On Labs - AJO'],
-  ]) {
-    const directory = path.join(root, 'plugins', name);
-    const manifest = JSON.parse(read(path.join(directory, '.claude-plugin', 'plugin.json')));
-    assert.equal(manifest.version, '0.1.0');
-    assert.deepEqual(Object.keys(manifest).sort(), ['author', 'description', 'displayName', 'name', 'version']);
-    const relativeFiles = filesUnder(directory).map(file => path.relative(directory, file));
-    assert.deepEqual(relativeFiles.sort(), [
-      path.join('.claude-plugin', 'plugin.json'),
-      'README.md',
-      path.join('skills', name, 'SKILL.md'),
-    ].sort());
-    const text = read(path.join(directory, 'skills', name, 'SKILL.md'));
-    const frontmatter = text.match(/^---\nname: ([a-z0-9-]+)\ndescription: >\n([\s\S]*?)\n---\n/);
-    assert.ok(frontmatter);
-    assert.equal(frontmatter[1], name);
-    assert.ok(frontmatter[2].length <= 1024);
-    assert.match(frontmatter[2], /Use only when explicitly asked/);
-    assert.match(frontmatter[2], /must not activate for general/);
-    assert.match(text, /Do not call tools, invoke other\s+skills/);
-    assert.match(text, /read or write files, run commands, or create,\s+modify, or publish any artifacts/);
-    assert.ok(text.includes(`> ${displayName} is a placeholder skill. No actions were performed.`));
-    assert.match(text, /Then stop/);
-    assert.doesNotMatch(text, /https?:\/\/|\[[a-z-]+__|```/);
   }
 });
 

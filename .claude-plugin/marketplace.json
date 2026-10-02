@@ -11,18 +11,6 @@
       "category": "design",
       "source": "./plugins/secur-csc-fsi",
       "description": "A modular Secur Financial/Get Moving Content Supply Chain demo with a master coordinator and six standalone step skills for Claude Desktop/Cowork."
-    },
-    {
-      "name": "secur-financial-cx",
-      "displayName": "Secur Financial CX",
-      "source": "./plugins/secur-financial-cx",
-      "description": "A no-op placeholder plugin for testing the Secur Financial CX card and skill in Claude Desktop/Cowork."
-    },
-    {
-      "name": "hands-on-labs-ajo",
-      "displayName": "Hands On Labs - AJO",
-      "source": "./plugins/hands-on-labs-ajo",
-      "description": "A no-op placeholder plugin for testing the Hands On Labs - AJO card and skill in Claude Desktop/Cowork."
     }
   ]
 }
